@@ -9,5 +9,6 @@
 
     function forceRefresh() {
   // 跳过缓存，强制获取最新页面
-  location.reload(true);
+//   location.reload(true);
+  location.reload()
 }
