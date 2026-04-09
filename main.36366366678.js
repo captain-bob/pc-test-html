@@ -6,3 +6,8 @@
 
     // 3. 加到页面里
     document.getElementById('container').appendChild(p)
+
+    function forceRefresh() {
+  // 跳过缓存，强制获取最新页面
+  location.reload(true);
+}
