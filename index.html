@@ -13,7 +13,7 @@
     <div class="header-wrap row">
       <div class="header-left col-sm-6">
         <div class="left-wrap">
-          <a href="#" class="iconfont icon-baogao">验房报告与大多数大多数的监理工具123456</a>
+          <a href="#" class="iconfont icon-baogao">验房报告与大多数大多数的监理工具789</a>
           <div class="keyword-wrap">
             <span class="header-left-line">|</span>
             <span class="header-left-keyword">方便</span>
@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="header-right col-sm-6">联系我们:水水水水水水（或扫描下方二维码体验）</div>
+      <div class="header-right col-sm-6">联系我们:（或扫描下方二维码体验）</div>
     </div>
   </header>
   
@@ -30,7 +30,22 @@
   </footer>
   <div id="container"></div>
   <button onclick="forceRefresh()">强制刷新123</button>
-  <script src="./main.1234.js"></script>
+  <script>
+    // 入口JS
+    fetch('/version.json?v='+Date.now()).then(res => res.json())
+      .then(data => {
+        if (data.version !== localStorage.getItem('version')) {
+          alert('有新版本，马上更新');
+          localStorage.setItem('version', data.version);
+          location.reload(true); // 强制刷最新
+          
+        }
+        console.log(data)
+      }).catch(err => {
+        console.log(err, '错误')
+      })
+  </script>
+  <script src="./main.789.js"></script>
 </body>
 
 </html>
