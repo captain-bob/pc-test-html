@@ -32,7 +32,7 @@
   <button onclick="forceRefresh()">强制刷新123</button>
   <script>
     // 入口JS
-    fetch('/version.json?v='+Date.now()).then(res => res.json())
+    fetch('./version.json?v='+Date.now()).then(res => res.json())
       .then(data => {
         if (data.version !== localStorage.getItem('version')) {
           alert('有新版本，马上更新');
